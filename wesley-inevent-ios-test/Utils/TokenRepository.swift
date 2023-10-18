@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class TokenRepository {
+    
+    func getFromDefaults() -> String? {
+        return "AIzaSyAKNtOXGi4h81BoDdBsYXQUGuLnZbCX1ls"
+    }
+    
+}

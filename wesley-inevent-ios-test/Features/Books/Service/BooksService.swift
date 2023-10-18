@@ -9,14 +9,13 @@ import UIKit
 import ServiceKit
 
 class BooksService {
-    
-    func searchBooks(with string: String, completion: @escaping ([ModelBooks]?, NetworkError?) -> Void) {
+    func searchBooks(with string: String, completion: @escaping (ModelBooks?, NetworkError?) -> Void) {
         Repository.manager.request(API.searchBooks(code: string)).response { response in
             guard let data = response.data else { completion(nil, nil) ; return }
             NetworkLogger.log(request: response.request, response: response.response, data: data, error: response.error)
             
             do {
-                let res: [ModelBooks] = try data.decoded()
+                let res: ModelBooks = try data.decoded()
                 completion(res, nil)
                 
             } catch let error {
@@ -24,5 +23,4 @@ class BooksService {
             }
         }
     }
-    
 }

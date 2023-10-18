@@ -1,0 +1,50 @@
+{
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "revision" : "b2fa556e4e48cbf06cf8c63def138c98f4b811fa",
+        "version" : "5.8.0"
+      }
+    },
+    {
+      "identity" : "iqkeyboardmanager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hackiftekhar/IQKeyboardManager",
+      "state" : {
+        "revision" : "abdf4e49e2178f6fb46fd71f8d87866140feda7c",
+        "version" : "6.5.15"
+      }
+    },
+    {
+      "identity" : "sdwebimage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SDWebImage/SDWebImage.git",
+      "state" : {
+        "revision" : "1f06ef5007b6a580b3873ed2adee19e05d3b215a",
+        "version" : "5.18.3"
+      }
+    },
+    {
+      "identity" : "servicekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/wesleytyber/ServiceKit",
+      "state" : {
+        "revision" : "5dce853914b7167720f90bdd0ff6b0e13ee9d18f",
+        "version" : "1.0.3"
+      }
+    },
+    {
+      "identity" : "stackviewkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/wesleytyber/StackViewKit",
+      "state" : {
+        "revision" : "0885cccabc1807a6bbac1cbe0692f61dce190fba",
+        "version" : "1.0.3"
+      }
+    }
+  ],
+  "version" : 2
+}

@@ -6,3 +6,19 @@
 //
 
 import Foundation
+
+public protocol Controller {
+    func configureRequets()
+    func configureDelegates()
+    func configureCompositionalLayout()
+    func configureAdditionalBehaviors()
+}
+
+extension Controller {
+    func initController() {
+        configureRequets()
+        configureDelegates()
+        configureCompositionalLayout()
+        configureAdditionalBehaviors()
+    }
+}

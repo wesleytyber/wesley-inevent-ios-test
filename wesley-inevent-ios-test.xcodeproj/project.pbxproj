@@ -9,21 +9,48 @@
 /* Begin PBXBuildFile section */
 		300D67392ADB1CD30036CD92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D67382ADB1CD30036CD92 /* AppDelegate.swift */; };
 		300D673B2ADB1CD30036CD92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D673A2ADB1CD30036CD92 /* SceneDelegate.swift */; };
-		300D673D2ADB1CD30036CD92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D673C2ADB1CD30036CD92 /* ViewController.swift */; };
-		300D67402ADB1CD30036CD92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 300D673E2ADB1CD30036CD92 /* Main.storyboard */; };
+		300D673D2ADB1CD30036CD92 /* BooksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D673C2ADB1CD30036CD92 /* BooksController.swift */; };
 		300D67422ADB1CD80036CD92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 300D67412ADB1CD80036CD92 /* Assets.xcassets */; };
 		300D67452ADB1CD80036CD92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 300D67432ADB1CD80036CD92 /* LaunchScreen.storyboard */; };
+		30533BD92AE062A500DD3B3D /* ServiceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 30533BD82AE062A500DD3B3D /* ServiceKit */; };
+		30533BDC2AE0667A00DD3B3D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30533BDB2AE0667A00DD3B3D /* API.swift */; };
+		30533BDE2AE066A200DD3B3D /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30533BDD2AE066A200DD3B3D /* Repository.swift */; };
+		30533BE12AE067CF00DD3B3D /* TokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30533BE02AE067CF00DD3B3D /* TokenRepository.swift */; };
+		30533BEA2AE069BF00DD3B3D /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30533BE92AE069BF00DD3B3D /* Books.swift */; };
+		30533BED2AE06A5C00DD3B3D /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 30533BEC2AE06A5C00DD3B3D /* SDWebImage */; };
+		30533BEF2AE06A5C00DD3B3D /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 30533BEE2AE06A5C00DD3B3D /* SDWebImageMapKit */; };
+		30533BF12AE06C4600DD3B3D /* BooksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30533BF02AE06C4600DD3B3D /* BooksService.swift */; };
+		30533BF42AE06CF100DD3B3D /* Encodable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30533BF32AE06CF100DD3B3D /* Encodable+Ext.swift */; };
+		30533BF62AE06EB700DD3B3D /* ConfigureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30533BF52AE06EB700DD3B3D /* ConfigureController.swift */; };
+		30533BF82AE06F3600DD3B3D /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30533BF72AE06F3600DD3B3D /* BooksViewModel.swift */; };
+		30533BFA2AE077B400DD3B3D /* BooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30533BF92AE077B400DD3B3D /* BooksView.swift */; };
+		30533BFD2AE0784400DD3B3D /* StackViewKit in Frameworks */ = {isa = PBXBuildFile; productRef = 30533BFC2AE0784400DD3B3D /* StackViewKit */; };
+		30533BFF2AE0785F00DD3B3D /* BooksCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30533BFE2AE0785F00DD3B3D /* BooksCollectionCell.swift */; };
+		30533C032AE079AB00DD3B3D /* AppLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30533C022AE079AB00DD3B3D /* AppLayout.swift */; };
+		30533C052AE079C200DD3B3D /* LayoutType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30533C042AE079C200DD3B3D /* LayoutType.swift */; };
+		30533C082AE0848400DD3B3D /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 30533C072AE0848400DD3B3D /* IQKeyboardManagerSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		300D67352ADB1CD30036CD92 /* wesley-inevent-ios-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wesley-inevent-ios-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		300D67382ADB1CD30036CD92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		300D673A2ADB1CD30036CD92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		300D673C2ADB1CD30036CD92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		300D673F2ADB1CD30036CD92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		300D673C2ADB1CD30036CD92 /* BooksController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksController.swift; sourceTree = "<group>"; };
 		300D67412ADB1CD80036CD92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		300D67442ADB1CD80036CD92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		300D67462ADB1CD80036CD92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30533BDB2AE0667A00DD3B3D /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		30533BDD2AE066A200DD3B3D /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		30533BE02AE067CF00DD3B3D /* TokenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRepository.swift; sourceTree = "<group>"; };
+		30533BE92AE069BF00DD3B3D /* Books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
+		30533BF02AE06C4600DD3B3D /* BooksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksService.swift; sourceTree = "<group>"; };
+		30533BF32AE06CF100DD3B3D /* Encodable+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Ext.swift"; sourceTree = "<group>"; };
+		30533BF52AE06EB700DD3B3D /* ConfigureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureController.swift; sourceTree = "<group>"; };
+		30533BF72AE06F3600DD3B3D /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
+		30533BF92AE077B400DD3B3D /* BooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksView.swift; sourceTree = "<group>"; };
+		30533BFE2AE0785F00DD3B3D /* BooksCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksCollectionCell.swift; sourceTree = "<group>"; };
+		30533C022AE079AB00DD3B3D /* AppLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLayout.swift; sourceTree = "<group>"; };
+		30533C042AE079C200DD3B3D /* LayoutType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +58,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30533C082AE0848400DD3B3D /* IQKeyboardManagerSwift in Frameworks */,
+				30533BED2AE06A5C00DD3B3D /* SDWebImage in Frameworks */,
+				30533BFD2AE0784400DD3B3D /* StackViewKit in Frameworks */,
+				30533BEF2AE06A5C00DD3B3D /* SDWebImageMapKit in Frameworks */,
+				30533BD92AE062A500DD3B3D /* ServiceKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +88,146 @@
 		300D67372ADB1CD30036CD92 /* wesley-inevent-ios-test */ = {
 			isa = PBXGroup;
 			children = (
-				300D67382ADB1CD30036CD92 /* AppDelegate.swift */,
-				300D673A2ADB1CD30036CD92 /* SceneDelegate.swift */,
-				300D673C2ADB1CD30036CD92 /* ViewController.swift */,
-				300D673E2ADB1CD30036CD92 /* Main.storyboard */,
-				300D67412ADB1CD80036CD92 /* Assets.xcassets */,
-				300D67432ADB1CD80036CD92 /* LaunchScreen.storyboard */,
+				30533BDA2AE0665C00DD3B3D /* API */,
+				30533BD42AE05FB600DD3B3D /* App */,
+				30533BD62AE05FD400DD3B3D /* Assets */,
+				30533BD52AE05FC600DD3B3D /* Features */,
 				300D67462ADB1CD80036CD92 /* Info.plist */,
+				300D67432ADB1CD80036CD92 /* LaunchScreen.storyboard */,
+				30533BDF2AE067C000DD3B3D /* Utils */,
 			);
 			path = "wesley-inevent-ios-test";
+			sourceTree = "<group>";
+		};
+		30533BD42AE05FB600DD3B3D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				300D67382ADB1CD30036CD92 /* AppDelegate.swift */,
+				300D673A2ADB1CD30036CD92 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		30533BD52AE05FC600DD3B3D /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				30533BE22AE0691E00DD3B3D /* Books */,
+				30533C002AE0798A00DD3B3D /* Compositional */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		30533BD62AE05FD400DD3B3D /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				300D67412ADB1CD80036CD92 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		30533BDA2AE0665C00DD3B3D /* API */ = {
+			isa = PBXGroup;
+			children = (
+				30533BDB2AE0667A00DD3B3D /* API.swift */,
+				30533BDD2AE066A200DD3B3D /* Repository.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		30533BDF2AE067C000DD3B3D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				30533BF22AE06CE000DD3B3D /* Extenstion */,
+				30533BE02AE067CF00DD3B3D /* TokenRepository.swift */,
+				30533BF52AE06EB700DD3B3D /* ConfigureController.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		30533BE22AE0691E00DD3B3D /* Books */ = {
+			isa = PBXGroup;
+			children = (
+				30533BE72AE0697300DD3B3D /* Cell */,
+				30533BE32AE0694B00DD3B3D /* Controller */,
+				30533BE82AE069B100DD3B3D /* Model */,
+				30533BE62AE0696B00DD3B3D /* Service */,
+				30533BE42AE0695300DD3B3D /* View */,
+				30533BE52AE0695700DD3B3D /* ViewModel */,
+			);
+			path = Books;
+			sourceTree = "<group>";
+		};
+		30533BE32AE0694B00DD3B3D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				300D673C2ADB1CD30036CD92 /* BooksController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		30533BE42AE0695300DD3B3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				30533BF92AE077B400DD3B3D /* BooksView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		30533BE52AE0695700DD3B3D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				30533BF72AE06F3600DD3B3D /* BooksViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		30533BE62AE0696B00DD3B3D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				30533BF02AE06C4600DD3B3D /* BooksService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		30533BE72AE0697300DD3B3D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				30533BFE2AE0785F00DD3B3D /* BooksCollectionCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		30533BE82AE069B100DD3B3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				30533BE92AE069BF00DD3B3D /* Books.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		30533BF22AE06CE000DD3B3D /* Extenstion */ = {
+			isa = PBXGroup;
+			children = (
+				30533BF32AE06CF100DD3B3D /* Encodable+Ext.swift */,
+			);
+			path = Extenstion;
+			sourceTree = "<group>";
+		};
+		30533C002AE0798A00DD3B3D /* Compositional */ = {
+			isa = PBXGroup;
+			children = (
+				30533C012AE0799800DD3B3D /* Layout */,
+			);
+			path = Compositional;
+			sourceTree = "<group>";
+		};
+		30533C012AE0799800DD3B3D /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				30533C022AE079AB00DD3B3D /* AppLayout.swift */,
+				30533C042AE079C200DD3B3D /* LayoutType.swift */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +246,13 @@
 			dependencies = (
 			);
 			name = "wesley-inevent-ios-test";
+			packageProductDependencies = (
+				30533BD82AE062A500DD3B3D /* ServiceKit */,
+				30533BEC2AE06A5C00DD3B3D /* SDWebImage */,
+				30533BEE2AE06A5C00DD3B3D /* SDWebImageMapKit */,
+				30533BFC2AE0784400DD3B3D /* StackViewKit */,
+				30533C072AE0848400DD3B3D /* IQKeyboardManagerSwift */,
+			);
 			productName = "wesley-inevent-ios-test";
 			productReference = 300D67352ADB1CD30036CD92 /* wesley-inevent-ios-test.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +281,12 @@
 				Base,
 			);
 			mainGroup = 300D672C2ADB1CD20036CD92;
+			packageReferences = (
+				30533BD72AE062A500DD3B3D /* XCRemoteSwiftPackageReference "ServiceKit" */,
+				30533BEB2AE06A5C00DD3B3D /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				30533BFB2AE0784400DD3B3D /* XCRemoteSwiftPackageReference "StackViewKit" */,
+				30533C062AE0848400DD3B3D /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
 			productRefGroup = 300D67362ADB1CD30036CD92 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +303,6 @@
 			files = (
 				300D67452ADB1CD80036CD92 /* LaunchScreen.storyboard in Resources */,
 				300D67422ADB1CD80036CD92 /* Assets.xcassets in Resources */,
-				300D67402ADB1CD30036CD92 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +313,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				300D673D2ADB1CD30036CD92 /* ViewController.swift in Sources */,
+				30533BF62AE06EB700DD3B3D /* ConfigureController.swift in Sources */,
+				30533C032AE079AB00DD3B3D /* AppLayout.swift in Sources */,
+				30533BF82AE06F3600DD3B3D /* BooksViewModel.swift in Sources */,
+				30533BFF2AE0785F00DD3B3D /* BooksCollectionCell.swift in Sources */,
+				300D673D2ADB1CD30036CD92 /* BooksController.swift in Sources */,
 				300D67392ADB1CD30036CD92 /* AppDelegate.swift in Sources */,
+				30533BDE2AE066A200DD3B3D /* Repository.swift in Sources */,
+				30533BF42AE06CF100DD3B3D /* Encodable+Ext.swift in Sources */,
+				30533BEA2AE069BF00DD3B3D /* Books.swift in Sources */,
+				30533BFA2AE077B400DD3B3D /* BooksView.swift in Sources */,
+				30533C052AE079C200DD3B3D /* LayoutType.swift in Sources */,
+				30533BF12AE06C4600DD3B3D /* BooksService.swift in Sources */,
+				30533BE12AE067CF00DD3B3D /* TokenRepository.swift in Sources */,
+				30533BDC2AE0667A00DD3B3D /* API.swift in Sources */,
 				300D673B2ADB1CD30036CD92 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +334,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		300D673E2ADB1CD30036CD92 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				300D673F2ADB1CD30036CD92 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		300D67432ADB1CD80036CD92 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -295,18 +474,23 @@
 				DEVELOPMENT_TEAM = A8WP3R74BG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "wesley-inevent-ios-test/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "InEvent Books";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wesley.wesley-inevent-ios-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -323,18 +507,23 @@
 				DEVELOPMENT_TEAM = A8WP3R74BG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "wesley-inevent-ios-test/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "InEvent Books";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wesley.wesley-inevent-ios-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -363,6 +552,69 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		30533BD72AE062A500DD3B3D /* XCRemoteSwiftPackageReference "ServiceKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/wesleytyber/ServiceKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.3;
+			};
+		};
+		30533BEB2AE06A5C00DD3B3D /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.18.3;
+			};
+		};
+		30533BFB2AE0784400DD3B3D /* XCRemoteSwiftPackageReference "StackViewKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/wesleytyber/StackViewKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.3;
+			};
+		};
+		30533C062AE0848400DD3B3D /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.15;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		30533BD82AE062A500DD3B3D /* ServiceKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30533BD72AE062A500DD3B3D /* XCRemoteSwiftPackageReference "ServiceKit" */;
+			productName = ServiceKit;
+		};
+		30533BEC2AE06A5C00DD3B3D /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30533BEB2AE06A5C00DD3B3D /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		30533BEE2AE06A5C00DD3B3D /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30533BEB2AE06A5C00DD3B3D /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+		30533BFC2AE0784400DD3B3D /* StackViewKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30533BFB2AE0784400DD3B3D /* XCRemoteSwiftPackageReference "StackViewKit" */;
+			productName = StackViewKit;
+		};
+		30533C072AE0848400DD3B3D /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30533C062AE0848400DD3B3D /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 300D672D2ADB1CD20036CD92 /* Project object */;
 }

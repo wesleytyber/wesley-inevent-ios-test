@@ -1,55 +1,70 @@
 //
-//  HomeViewModel.swift
+//  BooksViewModel.swift
 //  wesley-inevent-ios-test
 //
 //  Created by Wesley Calazans on 18/10/23.
 //
 
-import Foundation
+import UIKit
 
-protocol HomeViewModelProtocol: AnyObject {
+protocol BooksViewModelProtocol: AnyObject {
     func fetchSuccess()
     func fetchError(message: String)
 }
 
-class HomeViewModel: NSObject {
+class BooksViewModel: NSObject {
     
-    private weak var delegate: HomeViewModelProtocol?
-    private var homeService: HomeService = HomeService()
-    private var service: Service = Service()
-    private var searchViewModel: SearchViewModel = SearchViewModel(service: SearchService())
-    private var lines = P()
-    private var linesArray: [L] = []
-    var linePosition: [PS] = []
-    private var currentTime = ""
-    var stopSearch: [StopSearch] = []
-    private var locationManager: CLLocationManager = CLLocationManager()
-    var userLocation: CLLocationCoordinate2D = CLLocationCoordinate2D()
-    var userAddress = ""
+    private weak var delegate: BooksViewModelProtocol?
+    private var booksService: BooksService = BooksService()
+    private var bookModel: ModelBooks!
+    var isLoadingData = false
+    var searchText = ""
+}
+
+// MARK: - BooksViewModelProtocol
+
+extension BooksViewModel {
+    
+    func delegate(delegate: BooksViewModelProtocol?) {
+        self.delegate = delegate
+    }
     
 }
 
-extension HomeViewModel {
+extension BooksViewModel {
+    
+    func getBooks(search: String) {
+        booksService.searchBooks(with: search) { [weak self] response, error in
+            guard let self else { return }
+            
+            if let response {
+                bookModel = response
+                delegate?.fetchSuccess()
+            } else {
+                delegate?.fetchError(message: error?.localizedDescription ?? "")
+            }
+        }
+    }
+    
+}
+
+extension BooksViewModel {
     
     var numberOfSections: Int {
-        return 2
+        return 1
     }
     
     var numberOfItemsInSection: Int {
-        return linesArray.prefix(3).count
+        return bookModel?.items.count ?? 0
     }
     
-    var nextArrivedNumberOfItemsInSection: Int {
-        return linesArray.count
+    func books(indexPath: IndexPath) -> VolumeInfo {
+        return (bookModel?.items[indexPath.row].volumeInfo)!
     }
     
-    func loadLines(indexPath: IndexPath) -> L {
-        return linesArray[indexPath.row]
-    }
-    
-    func configureCell(collectionView: UICollectionView, for indexPath: IndexPath) -> HomeCollectionCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionCell.identifier, for: indexPath) as? HomeCollectionCell else { return .init() }
-        cell.data(data: loadLines(indexPath: indexPath), actual: currentTime)
+    func configureCell(collectionView: UICollectionView, for indexPath: IndexPath) -> BooksCollectionCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BooksCollectionCell.identifier, for: indexPath) as? BooksCollectionCell else { return .init() }
+        cell.data(data: books(indexPath: indexPath))
         return cell
     }
     
