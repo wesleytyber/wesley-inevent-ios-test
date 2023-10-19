@@ -12,13 +12,14 @@ enum API: URLRequestConvertible {
     
     // MARK: - Properties
     
-    case searchBooks(code: String)                                   // GET
+    case searchBooks(code: String)                                                    // GET
+    case searchBooksPerPage(code: String, startIndex: String)                         // GET
     
     // MARK: - HTTPMethod
     
     private var method: HTTPMethod {
         switch self {
-        case .searchBooks
+        case .searchBooks, .searchBooksPerPage
             : return .get
         }
     }
@@ -30,6 +31,12 @@ enum API: URLRequestConvertible {
         case .searchBooks:
             return "/volumes?q=".appending(parameters?["code"] as! String)
             + "&key=\(token ?? "")"
+            
+        case .searchBooksPerPage:
+            return "/volumes?q=".appending(parameters?["code"] as! String)
+            + "&key=\(token ?? "")"
+            + "&startIndex=".appending(parameters?["startIndex"] as! String)
+            + "&maxResults=10"
         }
     }
     // MARK: - Parameters
@@ -38,6 +45,8 @@ enum API: URLRequestConvertible {
         switch self {
         case .searchBooks(let code)
             : return ["code": code]
+        case .searchBooksPerPage(let code, let startIndex)
+            : return ["code": code, "startIndex": startIndex]
         }
     }
     
@@ -45,7 +54,7 @@ enum API: URLRequestConvertible {
     
     private var token: String? {
         switch self {
-        case .searchBooks:
+        case .searchBooks, .searchBooksPerPage:
             let repo = TokenRepository()
             guard let token = repo.getFromDefaults() else { return nil }
             return token
@@ -57,7 +66,7 @@ enum API: URLRequestConvertible {
     func asURLRequest() throws -> URLRequest {
         var _url: URL?
         let baseUrl = "https://www.googleapis.com/books/v1".appending(path)
-        //https://www.googleapis.com/books/v1/volumes?q=\(query)&key=\(apiKey)
+        
         switch self {
         default:
             _url = URL(string: baseUrl)
@@ -78,10 +87,10 @@ enum API: URLRequestConvertible {
     
     private func setupParameters(_ request: URLRequest) throws -> URLRequest {
         let urlRequest = request
-        /// if let parameters = parameters {
+        
         switch self {
             /// whose has code in the url
-        case .searchBooks
+        case .searchBooks, .searchBooksPerPage
             : break
         }
         

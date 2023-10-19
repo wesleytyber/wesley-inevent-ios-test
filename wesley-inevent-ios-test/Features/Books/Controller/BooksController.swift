@@ -59,9 +59,18 @@ extension BooksController: UISearchResultsUpdating, UISearchBarDelegate {
     
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else { return }
-        booksViewModel.getBooks(search: text.trimmingCharacters(in: .whitespaces))
-        emptyView?.removeFromSuperview()
+        booksViewModel.searchText = text.trimmingCharacters(in: .whitespaces)
+        booksViewModel.getBooks(search: booksViewModel.searchText)
+        
+        if text.isEmpty {
+            updateEmptyViewVisibility()
+        } else {
+            booksViewModel.getBooks(search: booksViewModel.searchText)
+            emptyView?.removeFromSuperview()
+        }
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) { }
     
 }
 
@@ -140,8 +149,7 @@ extension BooksController: UICollectionViewDelegate, UICollectionViewDataSource 
         let visibleHeight = scrollView.frame.height
         
         if offsetY > contentHeight - visibleHeight {
-            print("i'm here")
-            
+            booksViewModel.getBooksPerPage()
         }
     }
     

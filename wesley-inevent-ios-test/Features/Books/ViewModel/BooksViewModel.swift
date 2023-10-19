@@ -17,6 +17,7 @@ class BooksViewModel: NSObject {
     private weak var delegate: BooksViewModelProtocol?
     private var booksService: BooksService = BooksService()
     private var bookModel: ModelBooks?
+    var searchText: String = ""
     
     private var isLoadingData = false
     private let pageSize = 10
@@ -50,26 +51,20 @@ extension BooksViewModel {
         }
     }
     
-    func getBooksPage(search: String) {
-        let startIndex = bookModel?.items.count ?? 0
-        booksService.fetchBooksPage(with: search, startIndex: startIndex, pageSize: pageSize) { response in
-            switch response {
-            case .success(let response):
-                print("resposta de sucesso", response)
-                self.bookModel?.items.append(contentsOf: response.items)
-                DispatchQueue.main.async { [self] in
-                    self.isLoadingData = false // Restablece el indicador de carga
-                }
-                self.bookModel = response
-                self.delegate?.fetchSuccess()
-            case .failure(let error):
-                print("Error fetching data: \(error)")
-                self.delegate?.fetchError(message: error.localizedDescription)
-                self.isLoadingData = false
+    func getBooksPerPage() {
+        let startIndex = String(bookModel?.items.count ?? 0)
+        booksService.searchBooksPerPage(with: searchText, startIndex: startIndex) { [weak self] response, error in
+            guard let self else { return }
+            
+            if let response {
+                bookModel?.items.append(contentsOf: response.items)
+                delegate?.fetchSuccess()
+            } else {
+                delegate?.fetchError(message: error?.localizedDescription ?? "")
             }
         }
     }
-    
+      
 }
 
 // MARK: - CollectionCell
