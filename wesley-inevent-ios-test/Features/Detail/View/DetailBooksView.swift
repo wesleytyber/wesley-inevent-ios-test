@@ -71,7 +71,7 @@ class DetailBooksView: UIView {
     
     lazy var containerLabelsVStack: VStackView = {
         let view = VStackView(alignment: .leading,
-                              spacing: 4,
+                              spacing: 8,
                               distribution: .fillProportionally,
                               margins: .init(top: 4, left: 4, bottom: 4, right: 4),
                               subviews: [
@@ -87,7 +87,7 @@ class DetailBooksView: UIView {
     
     lazy var containerVStack: VStackView = {
         let view = VStackView(alignment: .center,
-                              spacing: 4,
+                              spacing: 8,
                               distribution: .equalCentering,
                               margins: .init(top: 4, left: 4, bottom: 4, right: 4),
                               subviews: [
@@ -199,9 +199,9 @@ extension DetailBooksView {
         )
         
         publishedAttributedTitle.append(NSAttributedString(string:
-                                                            convertDateFormatter(inputDateString: data.publishedDate ?? "",
+                                                            convertDateFormatter(inputDateString: data.publishedDate ?? "Não disponível",
                                                                                  inputFormat: "yyyy-MM-dd",
-                                                                                 outputFormat: "dd/MM/yyyy") ?? "",
+                                                                                 outputFormat: "dd/MM/yyyy") ?? "Não disponível",
                                                            attributes: publishedInfoAttributes))
         publishedLabel.attributedText = publishedAttributedTitle
         
@@ -222,7 +222,7 @@ extension DetailBooksView {
             attributes: descriptionAttributes
         )
         
-        descriptionAttributedTitle.append(NSAttributedString(string: data.description ?? "", attributes: descriptionInfoAttributes))
+        descriptionAttributedTitle.append(NSAttributedString(string: data.description ?? "Não disponível", attributes: descriptionInfoAttributes))
         descriptionLabel.attributedText = descriptionAttributedTitle
         
     }
