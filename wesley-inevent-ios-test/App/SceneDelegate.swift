@@ -14,11 +14,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
-        window = UIWindow(windowScene: windowScene)
-        let controller = BooksController()
-        window?.rootViewController = UINavigationController(rootViewController: controller)
-        window?.makeKeyAndVisible()
+        configureAppLaunch(windowScene: windowScene)
+    }
+    
+    func configureAppLaunch(windowScene: UIWindowScene) {
+        let defaults = UserDefaults.standard
+        if defaults.bool(forKey: "notFirstTimeInApp") == false {
+            defaults.set(true, forKey: "notFirstTimeInApp")
+            let ViewController = OnboardingController()
+            let NavigationController = UINavigationController(rootViewController: ViewController)
+            window = UIWindow(frame: UIScreen.main.bounds)
+            window?.windowScene = windowScene
+            window?.rootViewController = NavigationController
+            window?.makeKeyAndVisible()
+        } else {
+            let ViewController = BooksController()
+            let NavigationController = UINavigationController(rootViewController: ViewController)
+            window = UIWindow(frame: UIScreen.main.bounds)
+            window?.windowScene = windowScene
+            window?.rootViewController = NavigationController
+            window?.makeKeyAndVisible()
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -51,4 +67,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 }
-

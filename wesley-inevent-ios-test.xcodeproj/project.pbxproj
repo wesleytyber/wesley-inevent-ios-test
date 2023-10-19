@@ -39,6 +39,7 @@
 		308AE85D2AE193EE0026B0A0 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308AE85C2AE193EE0026B0A0 /* OnboardingView.swift */; };
 		308AE85F2AE194280026B0A0 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308AE85E2AE194280026B0A0 /* OnboardingController.swift */; };
 		309072962AE16A7B001B8C5B /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309072952AE16A7B001B8C5B /* Date+Ext.swift */; };
+		30AFE7DB2AE1AA5E009F3D04 /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AFE7DA2AE1AA5E009F3D04 /* UIButton+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		308AE85C2AE193EE0026B0A0 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		308AE85E2AE194280026B0A0 /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
 		309072952AE16A7B001B8C5B /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		30AFE7DA2AE1AA5E009F3D04 /* UIButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 			children = (
 				30533BF32AE06CF100DD3B3D /* Encodable+Ext.swift */,
 				309072952AE16A7B001B8C5B /* Date+Ext.swift */,
+				30AFE7DA2AE1AA5E009F3D04 /* UIButton+Ext.swift */,
 			);
 			path = Extenstion;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				300D673D2ADB1CD30036CD92 /* BooksController.swift in Sources */,
 				300D67392ADB1CD30036CD92 /* AppDelegate.swift in Sources */,
 				308AE85F2AE194280026B0A0 /* OnboardingController.swift in Sources */,
+				30AFE7DB2AE1AA5E009F3D04 /* UIButton+Ext.swift in Sources */,
 				30533BDE2AE066A200DD3B3D /* Repository.swift in Sources */,
 				308AE8562AE193980026B0A0 /* OnboardingCell.swift in Sources */,
 				30533BF42AE06CF100DD3B3D /* Encodable+Ext.swift in Sources */,

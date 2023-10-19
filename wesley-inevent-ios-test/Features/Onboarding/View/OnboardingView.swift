@@ -12,21 +12,24 @@ class OnboardingView: UIView {
     
     private weak var delegate: GenericDelegate?
     
-    lazy var onboardingCollectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout.init()
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
+    lazy var collectionViewLayout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0
         layout.itemSize = CGSizeMake(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.indicatorStyle = .default
-        collectionView.isPagingEnabled = true
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.isDirectionalLockEnabled = true
-        collectionView.contentInsetAdjustmentBehavior = .never
-        collectionView.register(OnboardingCell.self, forCellWithReuseIdentifier: OnboardingCell.identifier)
-        return collectionView
+        return layout
+    }()
+    
+    lazy var onboardingCollectionView: UICollectionView = {
+        let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.indicatorStyle = .default
+        view.isPagingEnabled = true
+        view.showsHorizontalScrollIndicator = false
+        view.isDirectionalLockEnabled = true
+        view.contentInsetAdjustmentBehavior = .never
+        view.register(OnboardingCell.self, forCellWithReuseIdentifier: OnboardingCell.identifier)
+        return view
     }()
     
     lazy var onboardingViewPageControl: UIPageControl = {
@@ -35,7 +38,6 @@ class OnboardingView: UIView {
         pageControl.currentPageIndicatorTintColor = .systemRed
         pageControl.pageIndicatorTintColor = .gray
         pageControl.isUserInteractionEnabled = false
-        pageControl.isAccessibilityElement = false
         pageControl.tag = 1
         pageControl.layer.masksToBounds = true
         pageControl.layer.cornerRadius = 10
@@ -45,8 +47,7 @@ class OnboardingView: UIView {
     lazy var skipIntroButton: UIButton = {
         let button = UIButton()
         button.setTitle("Próximo", for: .normal)
-        button.tag = 1
-        button.backgroundColor = .systemPink
+        button.setButtonDesign(layout: .primary)
         button.addTarget(self, action: #selector(skipIntroButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -105,10 +106,9 @@ extension OnboardingView: ViewCode {
             onboardingViewPageControl.heightAnchor.constraint(equalToConstant: 50),
             
             skipIntroButton.topAnchor.constraint(equalTo: onboardingViewPageControl.topAnchor, constant: -44),
-            skipIntroButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 100),
-            skipIntroButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100),
-            skipIntroButton.heightAnchor.constraint(equalToConstant: 44),
-            
+            skipIntroButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
+            skipIntroButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50),
+            skipIntroButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     

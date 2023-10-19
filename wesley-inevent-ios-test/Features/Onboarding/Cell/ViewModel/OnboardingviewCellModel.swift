@@ -15,10 +15,6 @@ class OnboardingCellViewModel {
         self.onboardingModel = onboardingModel
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     var primaryLabel: String {
         return onboardingModel?.name ?? ""
     }

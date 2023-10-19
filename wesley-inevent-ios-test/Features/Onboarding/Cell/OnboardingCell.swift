@@ -44,21 +44,6 @@ class OnboardingCell: UICollectionViewCell {
         return label
     }()
     
-    lazy var containerVStack: VStackView = {
-        let view = VStackView(alignment: .center,
-                              spacing: 8,
-                              distribution: .equalCentering,
-                              margins: .init(top: 4, left: 16, bottom: 4, right: 16),
-                              subviews: [
-                                onboardingImageView,
-                                onboardingPrimaryLabel,
-                                onboardingSecondaryLabel
-                              ]
-        )
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initViewCode()
@@ -66,6 +51,7 @@ class OnboardingCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        initViewCode()
     }
     
 }
@@ -88,17 +74,25 @@ extension OnboardingCell {
 extension OnboardingCell: ViewCode {
     
     func configureSubviews() {
-        contentView.addSubview(containerVStack)
+        contentView.addSubview(onboardingImageView)
+        contentView.addSubview(onboardingPrimaryLabel)
+        contentView.addSubview(onboardingSecondaryLabel)
     }
     
     func configureConstraints() {
         NSLayoutConstraint.activate([
-            onboardingImageView.widthAnchor.constraint(equalToConstant: 250),
+            onboardingImageView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 24),
+            onboardingImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            onboardingImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             onboardingImageView.heightAnchor.constraint(equalToConstant: 250),
             
-            containerVStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 50),
-            containerVStack.leadingAnchor.constraint(equalTo: leadingAnchor),
-            containerVStack.trailingAnchor.constraint(equalTo: trailingAnchor)
+            onboardingPrimaryLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20),
+            onboardingPrimaryLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -20),
+            onboardingPrimaryLabel.topAnchor.constraint(equalTo: onboardingImageView.bottomAnchor, constant: 50),
+            
+            onboardingSecondaryLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20),
+            onboardingSecondaryLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -20),
+            onboardingSecondaryLabel.topAnchor.constraint(equalTo: onboardingPrimaryLabel.bottomAnchor, constant: 12)
         ])
     }
     
