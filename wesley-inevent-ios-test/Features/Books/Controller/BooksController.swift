@@ -11,6 +11,7 @@ class BooksController: UIViewController {
     
     private var booksView: BooksView = BooksView()
     private let booksViewModel: BooksViewModel = BooksViewModel()
+    private var emptyView: EmptyStateView?
     
     override func loadView() {
         booksView = BooksView()
@@ -24,15 +25,42 @@ class BooksController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         initController()
+        updateEmptyViewVisibility()
     }
     
 }
+
+// MARK: - Functions
+
+extension BooksController {
+    
+    func updateEmptyViewVisibility() {
+        let isEmpty = booksViewModel.numberOfItemsInSection == 0
+        if isEmpty {
+            emptyView = EmptyStateView()
+            emptyView?.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(emptyView!)
+            
+            NSLayoutConstraint.activate([
+                emptyView!.topAnchor.constraint(equalTo: view.topAnchor),
+                emptyView!.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                emptyView!.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                emptyView!.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            ])
+        } else {
+            emptyView?.removeFromSuperview()
+        }
+    }
+}
+           
+// MARK: - UISearchResultsUpdating & UISearchBarDelegate
 
 extension BooksController: UISearchResultsUpdating, UISearchBarDelegate {
     
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else { return }
         booksViewModel.getBooks(search: text.trimmingCharacters(in: .whitespaces))
+        emptyView?.removeFromSuperview()
     }
     
 }
@@ -80,9 +108,7 @@ extension BooksController: BooksViewModelProtocol {
         booksView.collectionView.reloadData()
     }
     
-    func fetchError(message: String) {
-        print("deu ruim")
-    }
+    func fetchError(message: String) { }
     
 }
 

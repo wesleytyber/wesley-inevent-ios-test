@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct OnboardingModel {
+    let name: String
+    let image: String
+    let description: String
+}
