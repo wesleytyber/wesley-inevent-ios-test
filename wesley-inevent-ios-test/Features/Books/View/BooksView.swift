@@ -11,10 +11,11 @@ import SDWebImage
 
 class BooksView: UIView {
     
-    lazy var searchBar: UISearchBar = {
-        let searchBar = UISearchBar()
-        searchBar.translatesAutoresizingMaskIntoConstraints = false
-        searchBar.placeholder = "Ex: Harry potter..."
+    lazy var searchBar: UISearchController = {
+        let searchBar = UISearchController(searchResultsController: nil)
+        searchBar.searchBar.placeholder = "Ex: Harry potter"
+        searchBar.automaticallyShowsCancelButton = true
+        searchBar.searchBar.translatesAutoresizingMaskIntoConstraints = false
         return searchBar
     }()
     
@@ -50,6 +51,10 @@ class BooksView: UIView {
 
 extension BooksView {
     
+    func searchBarDelegate(delegate: UISearchResultsUpdating) {
+        searchBar.searchResultsUpdater = delegate
+    }
+    
     func configureCollectionViewDelegate(delegate: UICollectionViewDelegate,
                                          datasource: UICollectionViewDataSource) {
         collectionView.delegate = delegate
@@ -63,17 +68,12 @@ extension BooksView {
 extension BooksView: ViewCode {
     
     func configureSubviews() {
-        addSubview(searchBar)
         addSubview(collectionView)
     }
     
     func configureConstraints() {
         NSLayoutConstraint.activate([
-            searchBar.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            searchBar.leadingAnchor.constraint(equalTo: leadingAnchor),
-            searchBar.trailingAnchor.constraint(equalTo: trailingAnchor),
-            
-            collectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
+            collectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),

@@ -15,7 +15,6 @@ class BooksCollectionCell: UICollectionViewCell {
     
     // MARK: - Properties
     
-    ///
     lazy var bookImage: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false

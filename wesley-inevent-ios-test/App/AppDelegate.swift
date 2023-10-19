@@ -8,6 +8,10 @@
 import UIKit
 import IQKeyboardManagerSwift
 
+public protocol GenericDelegate: AnyObject {
+    func tappedButton( _ view: UIView)
+}
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

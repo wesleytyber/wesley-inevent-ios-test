@@ -16,9 +16,11 @@ class BooksViewModel: NSObject {
     
     private weak var delegate: BooksViewModelProtocol?
     private var booksService: BooksService = BooksService()
-    private var bookModel: ModelBooks!
-    var isLoadingData = false
-    var searchText = ""
+    private var bookModel: ModelBooks?
+    
+    private var isLoadingData = false
+    private let pageSize = 10
+    
 }
 
 // MARK: - BooksViewModelProtocol
@@ -30,6 +32,8 @@ extension BooksViewModel {
     }
     
 }
+
+// MARK: - Resquest
 
 extension BooksViewModel {
     
@@ -46,7 +50,29 @@ extension BooksViewModel {
         }
     }
     
+    func getBooksPage(search: String) {
+        let startIndex = bookModel?.items.count ?? 0
+        booksService.fetchBooksPage(with: search, startIndex: startIndex, pageSize: pageSize) { response in
+            switch response {
+            case .success(let response):
+                print("resposta de sucesso", response)
+                self.bookModel?.items.append(contentsOf: response.items)
+                DispatchQueue.main.async { [self] in
+                    self.isLoadingData = false // Restablece el indicador de carga
+                }
+                self.bookModel = response
+                self.delegate?.fetchSuccess()
+            case .failure(let error):
+                print("Error fetching data: \(error)")
+                self.delegate?.fetchError(message: error.localizedDescription)
+                self.isLoadingData = false
+            }
+        }
+    }
+    
 }
+
+// MARK: - CollectionCell
 
 extension BooksViewModel {
     

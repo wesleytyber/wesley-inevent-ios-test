@@ -12,14 +12,14 @@ enum LayoutType {
     case footer
     case normal
     
-    func getLayout(withHeader: Bool = true) -> NSCollectionLayoutSection {
+    func getLayout(withHeader: Bool = false) -> NSCollectionLayoutSection {
         switch self {
             
         case .reusable:
-            return AppLayout.shared.reusable(withHeader: true)
+            return AppLayout.shared.reusable(withHeader: false)
             
         case .footer:
-            return AppLayout.shared.footer(withFooter: true)
+            return AppLayout.shared.footer(withFooter: false)
             
         case .normal:
             return AppLayout.shared.normal()

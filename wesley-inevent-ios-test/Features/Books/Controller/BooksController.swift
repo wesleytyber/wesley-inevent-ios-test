@@ -10,7 +10,7 @@ import UIKit
 class BooksController: UIViewController {
     
     private var booksView: BooksView = BooksView()
-    private let booksviewModel: BooksViewModel = BooksViewModel()
+    private let booksViewModel: BooksViewModel = BooksViewModel()
     
     override func loadView() {
         booksView = BooksView()
@@ -28,16 +28,24 @@ class BooksController: UIViewController {
     
 }
 
+extension BooksController: UISearchResultsUpdating, UISearchBarDelegate {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else { return }
+        booksViewModel.getBooks(search: text.trimmingCharacters(in: .whitespaces))
+    }
+    
+}
+
 // MARK: - Controller
 
 extension BooksController: Controller {
     
-    func configureRequets() {
-        booksviewModel.getBooks(search: "Harry")
-    }
+    func configureRequets() { }
     
     func configureDelegates() {
-        booksviewModel.delegate(delegate: self)
+        booksView.searchBar.searchResultsUpdater = self
+        booksViewModel.delegate(delegate: self)
         booksView.configureCollectionViewDelegate(delegate: self, datasource: self)
     }
     
@@ -58,9 +66,10 @@ extension BooksController: Controller {
     
     func configureAdditionalBehaviors() {
         view.backgroundColor = .systemBackground
-        navigationItem.title = "Livros"
+        navigationItem.title = "Google Livros"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationItem.searchController = booksView.searchBar
     }
     
 }
@@ -82,20 +91,21 @@ extension BooksController: BooksViewModelProtocol {
 extension BooksController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return booksviewModel.numberOfSections
+        return booksViewModel.numberOfSections
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return booksviewModel.numberOfItemsInSection
+        return booksViewModel.numberOfItemsInSection
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return booksviewModel.configureCell(collectionView: booksView.collectionView, for: indexPath)
+        return booksViewModel.configureCell(collectionView: booksView.collectionView, for: indexPath)
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //let data = viewModel.loadLines(indexPath: indexPath)
-        //navigationController?.pushViewController(BooksDetailView(busSelected: data), animated: true)
+        let detailController = DetailBooksController(viewModel: booksViewModel.books(indexPath: indexPath))
+        detailController.modalPresentationStyle = .fullScreen
+        present(detailController, animated: true)
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -106,9 +116,6 @@ extension BooksController: UICollectionViewDelegate, UICollectionViewDataSource 
         if offsetY > contentHeight - visibleHeight {
             print("i'm here")
             
-            if !booksviewModel.isLoadingData {
-                booksviewModel.isLoadingData = true
-            }
         }
     }
     
