@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		300BEA622AE2A672004519EA /* BooksControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300BEA612AE2A672004519EA /* BooksControllerTests.swift */; };
 		300D67392ADB1CD30036CD92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D67382ADB1CD30036CD92 /* AppDelegate.swift */; };
 		300D673B2ADB1CD30036CD92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D673A2ADB1CD30036CD92 /* SceneDelegate.swift */; };
 		300D673D2ADB1CD30036CD92 /* BooksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D673C2ADB1CD30036CD92 /* BooksController.swift */; };
@@ -42,7 +43,19 @@
 		30AFE7DB2AE1AA5E009F3D04 /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AFE7DA2AE1AA5E009F3D04 /* UIButton+Ext.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		300BEA632AE2A672004519EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 300D672D2ADB1CD20036CD92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 300D67342ADB1CD30036CD92;
+			remoteInfo = "wesley-inevent-ios-test";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		300BEA5F2AE2A671004519EA /* wesley-inevent-ios-testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "wesley-inevent-ios-testTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		300BEA612AE2A672004519EA /* BooksControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksControllerTests.swift; sourceTree = "<group>"; };
 		300D67352ADB1CD30036CD92 /* wesley-inevent-ios-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wesley-inevent-ios-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		300D67382ADB1CD30036CD92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		300D673A2ADB1CD30036CD92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +89,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		300BEA5C2AE2A671004519EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		300D67322ADB1CD30036CD92 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -91,10 +111,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		300BEA602AE2A672004519EA /* wesley-inevent-ios-testTests */ = {
+			isa = PBXGroup;
+			children = (
+				300BEA612AE2A672004519EA /* BooksControllerTests.swift */,
+			);
+			path = "wesley-inevent-ios-testTests";
+			sourceTree = "<group>";
+		};
 		300D672C2ADB1CD20036CD92 = {
 			isa = PBXGroup;
 			children = (
 				300D67372ADB1CD30036CD92 /* wesley-inevent-ios-test */,
+				300BEA602AE2A672004519EA /* wesley-inevent-ios-testTests */,
 				300D67362ADB1CD30036CD92 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				300D67352ADB1CD30036CD92 /* wesley-inevent-ios-test.app */,
+				300BEA5F2AE2A671004519EA /* wesley-inevent-ios-testTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -362,6 +392,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		300BEA5E2AE2A671004519EA /* wesley-inevent-ios-testTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 300BEA672AE2A672004519EA /* Build configuration list for PBXNativeTarget "wesley-inevent-ios-testTests" */;
+			buildPhases = (
+				300BEA5B2AE2A671004519EA /* Sources */,
+				300BEA5C2AE2A671004519EA /* Frameworks */,
+				300BEA5D2AE2A671004519EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				300BEA642AE2A672004519EA /* PBXTargetDependency */,
+			);
+			name = "wesley-inevent-ios-testTests";
+			productName = "wesley-inevent-ios-testTests";
+			productReference = 300BEA5F2AE2A671004519EA /* wesley-inevent-ios-testTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		300D67342ADB1CD30036CD92 /* wesley-inevent-ios-test */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 300D67492ADB1CD80036CD92 /* Build configuration list for PBXNativeTarget "wesley-inevent-ios-test" */;
@@ -396,6 +444,10 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					300BEA5E2AE2A671004519EA = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 300D67342ADB1CD30036CD92;
+					};
 					300D67342ADB1CD30036CD92 = {
 						CreatedOnToolsVersion = 15.0;
 					};
@@ -421,11 +473,19 @@
 			projectRoot = "";
 			targets = (
 				300D67342ADB1CD30036CD92 /* wesley-inevent-ios-test */,
+				300BEA5E2AE2A671004519EA /* wesley-inevent-ios-testTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		300BEA5D2AE2A671004519EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		300D67332ADB1CD30036CD92 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -438,6 +498,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		300BEA5B2AE2A671004519EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				300BEA622AE2A672004519EA /* BooksControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		300D67312ADB1CD30036CD92 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -473,6 +541,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		300BEA642AE2A672004519EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 300D67342ADB1CD30036CD92 /* wesley-inevent-ios-test */;
+			targetProxy = 300BEA632AE2A672004519EA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		300D67432ADB1CD80036CD92 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -485,6 +561,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		300BEA652AE2A672004519EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A8WP3R74BG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wesley.wesley-inevent-ios-testTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wesley-inevent-ios-test.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/wesley-inevent-ios-test";
+			};
+			name = Debug;
+		};
+		300BEA662AE2A672004519EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A8WP3R74BG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wesley.wesley-inevent-ios-testTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wesley-inevent-ios-test.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/wesley-inevent-ios-test";
+			};
+			name = Release;
+		};
 		300D67472ADB1CD80036CD92 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -677,6 +791,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		300BEA672AE2A672004519EA /* Build configuration list for PBXNativeTarget "wesley-inevent-ios-testTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				300BEA652AE2A672004519EA /* Debug */,
+				300BEA662AE2A672004519EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		300D67302ADB1CD20036CD92 /* Build configuration list for PBXProject "wesley-inevent-ios-test" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

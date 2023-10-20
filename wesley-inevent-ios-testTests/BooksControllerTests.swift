@@ -17,29 +17,65 @@ class ViewModelMock {
     }
 }
 
-final class wesley_inevent_ios_testTests: XCTestCase {
-
+final class BooksControllerTests: XCTestCase {
+    
+    private var booksView: BooksView = BooksView()
+    private var booksController: BooksController!
+    private var collectionView: UICollectionView!
+    private var collectionViewMock: CollectionViewMock!
+    private var viewModelMock = ViewModelMock()
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        booksController = BooksController()
+        booksController?.loadViewIfNeeded()
+        continueAfterFailure = false
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
+        booksView.collectionView = collectionView
+        booksView.configureCollectionViewDelegate(delegate: booksController.self, datasource: booksController.self)
+        viewModelMock = ViewModelMock()
+        viewModelMock.delegate = booksController
+        collectionViewMock = CollectionViewMock(frame: .zero, collectionViewLayout: UICollectionViewLayout.init())
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        booksController = nil
+        collectionView = nil
+        collectionViewMock = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testConfigCollection() throws {
+        XCTAssertTrue(booksView.collectionView.delegate is BooksViewModelProtocol)
+        XCTAssertTrue(booksView.collectionView.dataSource is BooksViewModelProtocol)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testNumberOfItemsInSection() {
+        collectionViewMock.dataSource = booksController
+        collectionViewMock.delegate = booksController
+        XCTAssertEqual(collectionViewMock.numberOfRows, 0)
+        _ = collectionViewMock.numberOfItems(inSection: 0)
+        XCTAssertEqual(collectionViewMock.numberOfRows, 1)
     }
+    
+    func testCellForItemAtIndexPath() {
+        collectionViewMock.dataSource = booksController
+        XCTAssertEqual(collectionViewMock.cellForItem, 0)
+        _ = collectionViewMock.cellForItem(at: IndexPath(row: 0, section: 0))
+        XCTAssertEqual(collectionViewMock.cellForItem, 1)
+    }
+    
+}
 
+class CollectionViewMock: UICollectionView {
+    var numberOfRows = 0
+    var cellForItem = 0
+    
+    override func numberOfItems(inSection section: Int) -> Int {
+        numberOfRows += 1
+        return super.numberOfItems(inSection: section)
+    }
+    
+    override func cellForItem(at indexPath: IndexPath) -> UICollectionViewCell? {
+        cellForItem += 1
+        return super.cellForItem(at: indexPath)
+    }
 }
