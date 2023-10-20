@@ -4,6 +4,7 @@ O InEvent Books é um aplicativo para consulta de livros do Google.
 * Linguagem: Swift
 * Framework: UIKit com ViewCode
 * Arquitetura: MVVM
+* Testes unitários
 * Gerenciador de dependência: Swift Package Manager (SPM)
 # Dependências Externas
 * Alamofire
