@@ -61,16 +61,8 @@ extension BooksController: UISearchResultsUpdating, UISearchBarDelegate {
         guard let text = searchController.searchBar.text else { return }
         booksViewModel.searchText = text.trimmingCharacters(in: .whitespaces)
         booksViewModel.getBooks(search: booksViewModel.searchText)
-        
-        if text.isEmpty {
-            updateEmptyViewVisibility()
-        } else {
-            booksViewModel.getBooks(search: booksViewModel.searchText)
-            emptyView?.removeFromSuperview()
-        }
+        emptyView?.removeFromSuperview()
     }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) { }
     
 }
 
